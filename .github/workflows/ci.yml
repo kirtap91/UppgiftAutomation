@@ -3,9 +3,9 @@ name: Java Cucumber Selenium CI
 # Kör workflowen på push mot main eller vid Pull Request mot main
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-test:
