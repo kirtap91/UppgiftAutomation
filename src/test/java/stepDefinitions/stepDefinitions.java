@@ -22,7 +22,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 public class stepDefinitions {
 
@@ -69,8 +68,8 @@ public class stepDefinitions {
         );
 
         // 5) Skriv in e-postadressen två gånger
-        driver.findElement(By.id("member_emailaddress")).sendKeys("testinnnng@test.com");
-        driver.findElement(By.id("member_confirmemailaddress")).sendKeys("testinnnng@test.com");
+        driver.findElement(By.id("member_emailaddress")).sendKeys("testiinnnng@test.com");
+        driver.findElement(By.id("member_confirmemailaddress")).sendKeys("testiinnnng@test.com");
 
         // 6) Klicka i checkboxen för Terms & Conditions (dold <input> + synlig <label>)
         WebElement checkbox = driver.findElement(By.cssSelector("label[for='sign_up_25']"));
@@ -251,3 +250,4 @@ public class stepDefinitions {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }
+//test workflow
