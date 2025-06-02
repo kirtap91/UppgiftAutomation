@@ -68,8 +68,8 @@ public class stepDefinitions {
         );
 
         // 5) Skriv in e-postadressen två gånger
-        driver.findElement(By.id("member_emailaddress")).sendKeys("testinnnng@test.com");
-        driver.findElement(By.id("member_confirmemailaddress")).sendKeys("testinnnng@test.com");
+        driver.findElement(By.id("member_emailaddress")).sendKeys("testiinnnng@test.com");
+        driver.findElement(By.id("member_confirmemailaddress")).sendKeys("testiinnnng@test.com");
 
         // 6) Klicka i checkboxen för Terms & Conditions (dold <input> + synlig <label>)
         WebElement checkbox = driver.findElement(By.cssSelector("label[for='sign_up_25']"));
