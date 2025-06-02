@@ -1,6 +1,6 @@
 name: Java Cucumber Selenium CI
 
-# Kör workflowen på push mot main eller vid Pull Request mot main
+# Kör workflowen på push
 on:
   push:
     branches: [ main ]
@@ -22,9 +22,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'      # AdoptOpenJDK / Temurin 
-          java-version: '11'          # Eller 17 om du använder den
+          java-version: '23'
 
-      # 3) (Valfritt men oftast nödvändigt för Selenium) Starta en virtuell X-server (Xvfb)
       #    Så att Chrome kan köras i en “headless” display utan GUI
       - name: Setup Xvfb (för Selenium)
         run: |
@@ -40,11 +39,3 @@ jobs:
       # 5) Kör alla tester (enhetstester, integrationstester, Cucumber-tester osv.)
       - name: Run tests
         run: mvn test -q
-
-      # 6) (Valfritt) Om du vill spara t.ex. test-reports som artefakter:
-      # - name: Publish test reports
-      #   if: always()
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: surefire-reports
-      #     path: target/surefire-reports/**/*.xml
